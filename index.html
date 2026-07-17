@@ -1,140 +1,466 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title><strong>Kenneth Hasiholan</strong></title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Kenneth Hasiholan — Real Estate × AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Kenneth Hasiholan — NYC multifamily acquisitions analyst and AI automation builder. I underwrite deals and build the systems that underwrite them faster." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B12;
+  --bg-panel:#0C1420;
+  --line:#1B2836;
+  --ink:#D9E2EC;
+  --ink-dim:#7C8CA0;
+  --amber:#FFB454;
+  --amber-hot:#FF8A3D;
+  --teal:#3DD6B5;
+  --red:#FF5C64;
+  --mono:'IBM Plex Mono',monospace;
+  --sans:'IBM Plex Sans',sans-serif;
+  --disp:'Chakra Petch',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+::selection{background:var(--amber);color:#0A0F16}
 
-		<!-- Header -->
-			<header id="header">
-				<h1>Kenneth Hasiholan</h1>
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#one">What I Do</a></li>
-						<li><a href="#two">Who I Am</a></li>
-						<li><a href="#work">My Work</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
+/* ambient grid */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,180,84,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,180,84,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);
+}
+a{color:var(--amber);text-decoration:none}
+a:hover{color:var(--amber-hot)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content">
-					<header>
-						<h2>Hey, I'm Kenneth </h2>
-					</header>
-					<p>i believe in continuous learning, innovative problem-solving<br />
-					working with others to build good products and make the world better.</p>
-					<footer>
-						<a href="#one" class="button style2 down">More</a>
-					</footer>
-				</div>
-			</section>
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 
-		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>What I Do</h2>
-					</header>
-					<p>As an aspiring software developer,my essence is on full-stack development through using different technologies like React, JavaScript, and MongoDB, and working with Agile teams to produce digital solutions that make big marks in the world. By embracing constant learning and brainstorming creative solutions, I am looking to develop honest software that not only solves real-life problems but also makes the world a better place.</p>
-				</div>
-				<a href="#two" class="button style2 down anchored">Next</a>
-			</section>
+/* ── nav ─────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(7,11,18,.78);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--disp);font-weight:700;letter-spacing:.08em;font-size:.95rem;color:var(--ink)}
+.logo b{color:var(--amber)}
+.nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{color:var(--ink-dim);transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+@media(max-width:640px){.nav-links{gap:16px;font-size:.62rem}}
 
-		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>Who I Am</h2>
-					</header>
-					<p>Hello! I am Kenneth. I study Computer Science at Queens College. 
-						I like tech and education. I was born in Jakarta, moved to Hong Kong 
-						and now live in New York City. I want to be a product manager, programmer or UX researcher one day. I know Python, Java, C++, JavaScript, HTML, CSS, and SQL. I worked on a project about customer service and house prices. My faith in Jesus is vital. I am active in my lively church and assist in organizing activities. 
-						I love taking pictures and helping others through conversations</p>
-				</div>
-				<a href="#work" class="button style2 down anchored">Next</a>
-			</section>
+/* ── labels ──────────────────────── */
+.eyebrow{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--amber);display:flex;align-items:center;gap:10px;margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--amber)}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:.01em;margin-bottom:22px}
+section{padding:110px 0}
 
-		<!-- Work -->
-			<section id="work" class="main style3 primary">
-				<div class="content">
-					<header>
-						<h2>My Project</h2>
-						<p>Here are some innovative projects I've worked on during my years in college and internships</p>
-					</header>
+/* ── hero ────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero-kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+h1{
+  font-family:var(--disp);font-weight:700;line-height:1.06;
+  font-size:clamp(2.4rem,5.4vw,4rem);letter-spacing:.005em;
+}
+h1 .amber{color:var(--amber)}
+.hero-sub{margin:24px 0 34px;color:var(--ink-dim);max-width:32em;font-size:1.05rem}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:13px 24px;border:1px solid var(--amber);color:var(--amber);
+  position:relative;transition:all .25s;display:inline-block;background:transparent;cursor:pointer;
+}
+.btn:hover{background:var(--amber);color:#0A0F16;box-shadow:0 0 28px rgba(255,180,84,.35)}
+.btn.ghost{border-color:var(--line);color:var(--ink-dim)}
+.btn.ghost:hover{border-color:var(--ink);color:var(--ink);background:transparent;box-shadow:none}
 
-					<!-- Gallery  -->
-						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="Resume" alt="" /></a>
-							<article class ="from-right">
-								<body>
-								<a href="https://docs.google.com/document/d/1u3YUaAJHrdd3wTHasDWl9BTG-QcgPVJR/edit" target="_blank"> Resume </a>
-							</body>
-							</article>
-						</div>
+/* ── terminal (signature) ────────── */
+.term{
+  background:var(--bg-panel);border:1px solid var(--line);
+  box-shadow:0 24px 70px rgba(0,0,0,.5), 0 0 0 1px rgba(255,180,84,.05), 0 0 60px rgba(255,180,84,.06);
+  font-family:var(--mono);font-size:.78rem;
+  position:relative;overflow:hidden;
+}
+.term::after{ /* scanlines */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.012) 2px 4px);
+}
+.term-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02);
+}
+.term-title{color:var(--ink-dim);letter-spacing:.1em;font-size:.68rem}
+.term-dots{display:flex;gap:6px}
+.term-dots span{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.term-dots span:first-child{background:var(--red)}
+.term-dots span:nth-child(2){background:var(--amber)}
+.term-dots span:last-child{background:var(--teal)}
+.term-body{padding:18px 16px 20px;min-height:296px}
+.tline{display:flex;gap:10px;margin-bottom:7px;opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s;white-space:pre-wrap}
+.tline.on{opacity:1;transform:none}
+.tp{color:var(--teal)}
+.tk{color:var(--ink-dim)}
+.tv{color:var(--ink)}
+.twarn{color:var(--amber)}
+.tok{color:var(--teal)}
+.verdict{
+  margin-top:14px;display:inline-block;padding:8px 18px;
+  font-family:var(--disp);font-weight:700;font-size:1.05rem;letter-spacing:.2em;
+  border:1.5px solid var(--teal);color:var(--teal);
+  opacity:0;transform:scale(1.35) rotate(-4deg);transition:opacity .3s,transform .3s cubic-bezier(.2,1.6,.4,1);
+  box-shadow:0 0 24px rgba(61,214,181,.25);
+}
+.verdict.on{opacity:1;transform:scale(1) rotate(-2deg)}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--amber);animation:blink 1s steps(1) infinite;vertical-align:-2px}
+@keyframes blink{50%{opacity:0}}
 
-				</div>
-			</section>
+/* ── ticker ──────────────────────── */
+.ticker{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;background:rgba(255,255,255,.015);
+}
+.ticker-track{
+  display:flex;gap:48px;padding:12px 0;width:max-content;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-dim);
+  animation:tick 42s linear infinite;
+}
+@keyframes tick{to{transform:translateX(-50%)}}
+.ticker b{color:var(--amber);font-weight:500}
+.ticker .up{color:var(--teal)}
+.ticker .dn{color:var(--red)}
 
-		<!-- Contact -->
-			<section id="contact" class="main style3 secondary">
-				<div class="content">
-					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
-					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</section>
+/* ── dossier / about ─────────────── */
+.dossier{display:grid;grid-template-columns:1.2fr .8fr;gap:56px}
+@media(max-width:860px){.dossier{grid-template-columns:1fr}}
+.dossier p{color:var(--ink-dim);margin-bottom:16px}
+.dossier p strong{color:var(--ink);font-weight:600}
+.datacard{
+  border:1px solid var(--line);background:var(--bg-panel);padding:26px;height:max-content;
+  position:relative;
+}
+.datacard::before{
+  content:"";position:absolute;top:-1px;left:-1px;width:22px;height:22px;
+  border-top:2px solid var(--amber);border-left:2px solid var(--amber);
+}
+.drow{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.85rem}
+.drow:last-child{border-bottom:none}
+.drow .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+.drow .v{text-align:right;color:var(--ink)}
 
-		<!-- Footer -->
-			<footer id="footer">
+/* ── modules / projects ──────────── */
+.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:820px){.modules{grid-template-columns:1fr}}
+.mod{
+  border:1px solid var(--line);background:var(--bg-panel);padding:28px;
+  position:relative;transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.mod:hover{transform:translateY(-4px);border-color:rgba(255,180,84,.5);box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 30px rgba(255,180,84,.07)}
+.mod-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim)}
+.status{display:flex;align-items:center;gap:7px}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);animation:pulse 2.2s infinite}
+.status.amber i{background:var(--amber);box-shadow:0 0 10px var(--amber)}
+@keyframes pulse{50%{opacity:.35}}
+.mod h3{font-family:var(--disp);font-weight:600;font-size:1.15rem;margin-bottom:10px}
+.mod h3 a{color:var(--ink)}
+.mod h3 a:hover{color:var(--amber)}
+.mod p{color:var(--ink-dim);font-size:.92rem;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;
+  border:1px solid var(--line);padding:4px 10px;color:var(--ink-dim);
+}
+.mod .prize{
+  position:absolute;top:-11px;right:16px;background:var(--amber);color:#0A0F16;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;padding:4px 10px;font-weight:500;
+}
 
-				<!-- Icons -->
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-					</ul>
+/* ── stack ───────────────────────── */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.stack{grid-template-columns:1fr}}
+.scol{border:1px solid var(--line);background:var(--bg-panel);padding:24px}
+.scol h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.scol ul{list-style:none}
+.scol li{padding:6px 0;color:var(--ink-dim);font-size:.9rem;border-bottom:1px dashed var(--line)}
+.scol li:last-child{border:none}
+.scol li::before{content:"▸ ";color:var(--teal);font-size:.7rem}
 
-				<!-- Menu -->
-					<ul class="menu">
-						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
+/* ── contact ─────────────────────── */
+#contact{padding-bottom:80px}
+.contact-box{
+  border:1px solid var(--line);background:linear-gradient(180deg,var(--bg-panel),rgba(255,180,84,.03));
+  padding:56px 40px;text-align:center;position:relative;overflow:hidden;
+}
+.contact-box::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,180,84,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,180,84,.05) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse at center,#000,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000,transparent 75%);
+}
+.contact-box p{color:var(--ink-dim);max-width:34em;margin:0 auto 30px}
 
-			</footer>
+/* ── footer ──────────────────────── */
+footer{border-top:1px solid var(--line);padding:26px 0;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--ink-dim)}
+.foot-in{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot-in a{color:var(--ink-dim)}
+.foot-in a:hover{color:var(--amber)}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+/* ── reveal ──────────────────────── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
 
-	</body>
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+  .rv,.tline{opacity:1;transform:none}
+  .verdict{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">KH<b>_</b>SYS</div>
+    <div class="nav-links">
+      <a href="#about">Profile</a>
+      <a href="#work">Modules</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-kicker">// NYC · REAL ESTATE × AI</div>
+      <h1>I underwrite deals.<br/>Then I build the machines<br/>that underwrite them <span class="amber">faster.</span></h1>
+      <p class="hero-sub">Kenneth Hasiholan — multifamily acquisitions &amp; construction project administration at H.L. Dynasty, and builder of AI pipelines that read offering memorandums the way an analyst should: adversarially.</p>
+      <div class="btn-row">
+        <a class="btn" href="#work">View modules</a>
+        <a class="btn ghost" href="https://docs.google.com/document/d/1u3YUaAJHrdd3wTHasDWl9BTG-QcgPVJR/edit" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+    <div class="term" aria-label="Animated underwriting terminal demo">
+      <div class="term-bar">
+        <span class="term-title">MULTIFAMILYIQ // DEAL_SCAN v2.4</span>
+        <div class="term-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="term-body" id="termBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow rv">01 · Profile</div>
+    <h2 class="rv">Two worlds, one operator</h2>
+    <div class="dossier">
+      <div class="rv">
+        <p><strong>By day:</strong> Project Administrator &amp; Acquisitions at H.L. Dynasty, a Queens-based construction, brokerage, and development firm. I run RFIs, submittals, change orders, COIs, lien waivers, and DOB coordination on the construction side — and underwrite multifamily acquisitions across NYC submarkets on the other, digging through DHCR records, ACRIS filings, and HPD/DOB violations to find what a building is actually worth under HSTPA and Good Cause Eviction. I also provide technical sales support at Electrotech Service Equipment Corporation in Astoria.</p>
+        <p><strong>By build:</strong> I turn those slow manual workflows into automated systems — n8n pipelines, Claude-powered agents, and Excel engines that do in minutes what takes analysts days.</p>
+        <p><strong>The path:</strong> Born in Jakarta, raised in Hong Kong, home in New York City. Computer Science graduate of CUNY Queens College. My faith in Jesus is central to who I am, and I stay active in my church community. Outside of work: photography, and helping people think things through.</p>
+      </div>
+      <div class="datacard rv">
+        <div class="drow"><span class="k">Base</span><span class="v">New York City</span></div>
+        <div class="drow"><span class="k">Role</span><span class="v">Project Admin / Acquisitions</span></div>
+        <div class="drow"><span class="k">Firm</span><span class="v">H.L. Dynasty</span></div>
+        <div class="drow"><span class="k">Education</span><span class="v">B.S. Computer Science, CUNY QC</span></div>
+        <div class="drow"><span class="k">2026</span><span class="v">Prize — Project Destined AI×CRE Hackathon</span></div>
+        <div class="drow"><span class="k">2026</span><span class="v">CBRE AI in CRE Fellowship</span></div>
+        <div class="drow"><span class="k">Route</span><span class="v">JKT → HKG → NYC</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow rv">02 · Modules</div>
+    <h2 class="rv">Systems in production</h2>
+    <div class="modules">
+      <article class="mod rv">
+        <span class="prize">★ HACKATHON PRIZE</span>
+        <div class="mod-top"><span>MOD_01 // PIPELINE</span><span class="status"><i></i>LIVE</span></div>
+        <h3><a href="https://multifamilyiq-cre.lovable.app" target="_blank" rel="noopener">MultifamilyIQ ↗</a></h3>
+        <p>Four-stage n8n pipeline that reads offering memorandums as adversarial documents — recomputes the financials from scratch, cross-references DHCR, HPD, DOB, DOF, and ACRIS, and returns a Buy / Review / Pass verdict. Prize winner at the Project Destined AI × CRE Hackathon.</p>
+        <div class="tags"><span>n8n</span><span>Lovable</span><span>Supabase</span><span>Claude API</span></div>
+      </article>
+      <article class="mod rv">
+        <div class="mod-top"><span>MOD_02 // TOOLKIT</span><span class="status"><i></i>ACTIVE</span></div>
+        <h3>NYC Underwriting Toolkit</h3>
+        <p>Reusable system built from deals analyzed across the East Village, Lower East Side, Red Hook, Bath Beach, Clinton Hill, and Hell's Kitchen: a 10-tab Excel underwriting template, a 48-step manual underwriting guide, and a one-page deal checklist.</p>
+        <div class="tags"><span>Excel</span><span>DHCR</span><span>ACRIS</span><span>HSTPA</span></div>
+      </article>
+      <article class="mod rv">
+        <div class="mod-top"><span>MOD_03 // AGENTS</span><span class="status"><i></i>ACTIVE</span></div>
+        <h3>Claude Skills Suite</h3>
+        <p>A library of custom AI agent skills with structured docs, reference material, scripts, and regression tests — including an 18-phase institutional underwriting engine with 9-sheet Excel output, a fact-verification reasoning agent, and a supply/demand chart analyst with a 12-test suite.</p>
+        <div class="tags"><span>Claude</span><span>Python</span><span>Agent Skills</span></div>
+      </article>
+      <article class="mod rv">
+        <div class="mod-top"><span>MOD_04 // OPS</span><span class="status amber"><i></i>INTERNAL</span></div>
+        <h3>Operations Automation</h3>
+        <p>Internal systems that make teams faster — including a Notion-based onboarding platform built at Electrotech with a 90-day playbook and strategic planning tools.</p>
+        <div class="tags"><span>Notion</span><span>Systems Design</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="wrap">
+    <div class="eyebrow rv">03 · Stack</div>
+    <h2 class="rv">Operating capabilities</h2>
+    <div class="stack">
+      <div class="scol rv">
+        <h4>Real Estate</h4>
+        <ul>
+          <li>Multifamily underwriting</li>
+          <li>DHCR / rent stabilization analysis</li>
+          <li>ACRIS · HPD · DOB BIS research</li>
+          <li>HSTPA &amp; Good Cause Eviction</li>
+          <li>RFIs · submittals · change orders</li>
+          <li>COIs · lien waivers · G702/G703</li>
+        </ul>
+      </div>
+      <div class="scol rv">
+        <h4>Engineering</h4>
+        <ul>
+          <li>Python · JavaScript · SQL</li>
+          <li>Claude API &amp; agent design</li>
+          <li>n8n workflow automation</li>
+          <li>Lovable · Supabase</li>
+          <li>Excel financial modeling</li>
+        </ul>
+      </div>
+      <div class="scol rv">
+        <h4>Method</h4>
+        <ul>
+          <li>Adversarial document reading</li>
+          <li>Recompute, never trust the OM</li>
+          <li>Regulatory-first diligence</li>
+          <li>Test-covered agent pipelines</li>
+          <li>Automate the second time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow rv">04 · Contact</div>
+    <div class="contact-box rv">
+      <h2>Open channel</h2>
+      <p>Whether it's a deal worth underwriting, a workflow worth automating, or an idea worth building — I'd love to hear from you.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn ghost" href="https://github.com/kennethhas" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <span>© 2026 KENNETH HASIHOLAN</span>
+    <span>JKT → HKG → NYC // BUILT BY HAND</span>
+  </div>
+</footer>
+
+<script>
+/* ── terminal animation ── */
+const lines = [
+  {p:"$",t:" ingest OM_sample-deal.pdf",cls:"tv"},
+  {k:"PARSE",t:"21 units · Lower East Side · asking $12.4M",cls:"tv"},
+  {k:"RECOMPUTE",t:"NOI restated: -8.2% vs. broker pro forma",cls:"twarn"},
+  {k:"DHCR",t:"6 stabilized units flagged · registration pulled",cls:"tv"},
+  {k:"HPD/DOB",t:"3 open violations · Class B · est. cure $41K",cls:"twarn"},
+  {k:"ACRIS",t:"debt matures 2027 · seller motivation: HIGH",cls:"tok"},
+  {k:"GCE",t:"Good Cause exposure modeled on free-market units",cls:"tv"},
+  {k:"VERDICT",t:"pricing works below $10.9M",cls:"tok"},
+];
+const body = document.getElementById('termBody');
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function buildLine(l){
+  const d=document.createElement('div');d.className='tline';
+  if(l.p){d.innerHTML='<span class="tp">'+l.p+'</span><span class="'+l.cls+'">'+l.t+'</span>';}
+  else{d.innerHTML='<span class="tk">['+l.k+']</span><span class="'+l.cls+'">'+l.t+'</span>';}
+  return d;
+}
+function runTerm(){
+  body.innerHTML='';
+  let i=0;
+  function next(){
+    if(i<lines.length){
+      const d=buildLine(lines[i]);body.appendChild(d);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('on')));
+      i++;setTimeout(next, reduced?0:520);
+    }else{
+      const v=document.createElement('div');v.className='verdict';v.textContent='REVIEW → BUY @ $10.9M';
+      body.appendChild(v);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>v.classList.add('on')));
+      const c=document.createElement('div');c.style.marginTop='12px';
+      c.innerHTML='<span class="tp">$</span> <span class="cursor"></span>';
+      body.appendChild(c);
+      if(!reduced) setTimeout(runTerm, 9000);
+    }
+  }
+  next();
+}
+runTerm();
+
+/* ── ticker ── */
+const items = [
+  '<b>EAST VILLAGE</b> 41U <span class="dn">PASS</span>',
+  '<b>RED HOOK</b> LIHTC/420-c <span class="up">UNDERWRITTEN</span>',
+  '<b>BATH BEACH</b> 16U STABILIZED <span class="dn">PASS</span>',
+  '<b>LES</b> 21U GOOD CAUSE <span class="up">ANALYZED</span>',
+  '<b>HELL\'S KITCHEN</b> 20U <span class="up">MODELED</span>',
+  '<b>CLINTON HILL</b> 49U DEBT MATURITY <span class="up">TRACKED</span>',
+  '<b>DHCR</b> REGISTRATIONS PULLED',
+  '<b>ACRIS</b> CHAIN OF TITLE VERIFIED',
+];
+const track=document.getElementById('tickerTrack');
+track.innerHTML=(items.join(' <span style="color:var(--line)">◆</span> ')+' <span style="color:var(--line)">◆</span> ').repeat(2);
+
+/* ── scroll reveal ── */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
 </html>
